@@ -36,11 +36,11 @@ const uint16_t PROGMEM right_half_curly_bracket_close[] = {TD(TD_CQ), RA_DOT, CO
 const uint16_t PROGMEM right_half_rabk[] = {IT_H, TD(TD_CQ), COMBO_END};
 
 combo_t key_combos[] = {
-    [LEFT_HALF_SQUARE_BRACKET_OPEN] = COMBO(left_half_square_bracket_open, IT_LBRC),
-    [LEFT_HALF_CURLY_BRACKET_OPEN] = COMBO(left_half_curly_bracket_open, IT_LCBR),
-    [LEFT_HALF_LABK] = COMBO(left_half_labk, IT_LABK),
+    COMBO(left_half_square_bracket_open, IT_LBRC),
+    COMBO(left_half_curly_bracket_open, IT_LCBR),
+    COMBO(left_half_labk, IT_LABK),
 
-    [RIGHT_HALF_SQUARE_BRACKET_CLOSE] = COMBO(right_half_square_bracket_close, IT_RBRC),
-    [RIGHT_HALF_CURLY_BRACKET_CLOSE] = COMBO(right_half_curly_bracket_close, IT_RCBR),
-    [RIGHT_HALF_RABK] = COMBO(right_half_rabk, IT_RABK),
+    COMBO(right_half_square_bracket_close, IT_RBRC),
+    COMBO(right_half_curly_bracket_close, IT_RCBR),
+    COMBO(right_half_rabk, IT_RABK),
 };

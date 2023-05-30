@@ -1,7 +1,3 @@
-// Lets you roll mod-tap keys
-// See: https://docs.qmk.fm/#/tap_hold?id=ignore-mod-tap-interrupt
-#define IGNORE_MOD_TAP_INTERRUPT
-
 // Kyria is a split keyboard and I connect it
 // to an USB port on the left side of my laptop.
 // Therefore, to lower the cable clutter on my desk,
