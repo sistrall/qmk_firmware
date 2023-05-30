@@ -2,6 +2,7 @@
 
 #include "keycodes.h"
 #include "tap_dances.h"
+#include "combos.h"
 
 #include "sistrall.h"
 
@@ -16,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,     IT_1,       IT_2,       IT_3,       IT_4,       IT_5,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_6,       IT_7,       IT_8,       IT_9,       IT_0,       KC_BSPC,
         KC_TAB,     IT_Q,       IT_W,       IT_F,       IT_P,       IT_B,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_J,       IT_L,       IT_U,       IT_Y,       IT_SLSH,    RA_BSPC,
         IT_AT,      IT_A,       IT_R,       IT_S,       IT_T,       IT_G,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_M,       IT_N,       IT_E,       IT_I,       IT_O,       IT_HASH,
-        KC_LSPO,    LC_Z,       LA_X,       IT_C,       IT_D,       IT_V,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_K,       IT_H,       TD(TD_CQ),  RA_DOT,     RC_MINS,    KC_RSPC,
+        SC_LSPO,    LC_Z,       LA_X,       IT_C,       IT_D,       IT_V,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_K,       IT_H,       TD(TD_CQ),  RA_DOT,     RC_MINS,    SC_RSPC,
         KC_NO,      KC_NO,      KC_NO,      LC_E,       KC_LALT,    KC_LGUI,    KC_SPACE,   MO_NUM,     MO_NAV,     KC_ENT,     KC_RGUI,    KC_RALT,    KC_RCTL,    KC_NO,      KC_NO,      KC_NO
     ),
 

@@ -12,7 +12,6 @@ INTROSPECTION_KEYMAP_C = sistrall.c
 SRC += keycodes.c
 SRC += tap_dances.c
 SRC += layers.c
-SRC += combos.c
 
 ifeq ($(strip $(ENCODER_ENABLE)), yes)
   SRC += encoder.c
