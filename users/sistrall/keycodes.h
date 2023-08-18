@@ -28,15 +28,28 @@
 #define LG_A LGUI_T(IT_A)
 #define LA_R LALT_T(IT_R)
 #define LC_S LCTL_T(IT_S)
+#define LS_T LSFT_T(IT_T)
+
+#define LS_A LSFT_T(IT_A)
+#define LC_R LCTL_T(IT_R)
+#define LA_S LALT_T(IT_S)
+#define LG_T LGUI_T(IT_T)
+
 #define LC_Z LCTL_T(IT_Z)
 #define LA_X LALT_T(IT_X)
+
 #define LC_E LCTL_T(KC_ESC)
-#define LS_T LSFT_T(IT_T)
 
 #define RS_N RSFT_T(IT_N)
 #define RC_E RCTL_T(IT_E)
 #define RA_I RALT_T(IT_I)
 #define RG_O RGUI_T(IT_O)
+
+#define RG_N RGUI_T(IT_N)
+#define RA_E RALT_T(IT_E)
+#define RC_I RCTL_T(IT_I)
+#define RS_O RSFT_T(IT_O)
+
 #define RC_MINS RCTL_T(IT_MINS)
 #define RA_DOT RALT_T(IT_DOT)
 
