@@ -16,14 +16,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE_LAYER] = SISTRALL_layout(
         KC_ESC,     IT_1,       IT_2,       IT_3,       IT_4,       IT_5,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_6,       IT_7,       IT_8,       IT_9,       IT_0,       KC_BSPC,
         KC_TAB,     IT_Q,       IT_W,       IT_F,       IT_P,       IT_B,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_J,       IT_L,       IT_U,       IT_Y,       IT_SLSH,    RA_BSPC,
-        IT_AT,      IT_A,       IT_R,       IT_S,       IT_T,       IT_G,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_M,       IT_N,       IT_E,       IT_I,       IT_O,       IT_HASH,
+        IT_AT,      LS_A,       LC_R,       LA_S,       LG_T,       IT_G,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_M,       RG_N,       RA_E,       RC_I,       RS_O,       IT_HASH,
         SC_LSPO,    LC_Z,       LA_X,       IT_C,       IT_D,       IT_V,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_K,       IT_H,       TD(TD_CQ),  RA_DOT,     RC_MINS,    SC_RSPC,
         KC_NO,      KC_NO,      KC_NO,      LC_E,       KC_LALT,    KC_LGUI,    KC_SPACE,   MO_NUM,     MO_NAV,     KC_ENT,     KC_RGUI,    KC_RALT,    KC_RCTL,    KC_NO,      KC_NO,      KC_NO
     ),
 
     [NUMBERS_LAYER] = SISTRALL_layout(
         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-        _______,    IT_EXLM,    IT_DQUO,    _______,    IT_DLR,     IT_PERC,    _______,    _______,    _______,    _______,    IT_EQL,     IT_7,       IT_8,       IT_9,       IT_0,       _______,
+        _______,    IT_EXLM,    IT_DQUO,    IT_CIRC,    IT_DLR,     IT_PERC,    _______,    _______,    _______,    _______,    IT_EQL,     IT_7,       IT_8,       IT_9,       IT_0,       _______,
         _______,    IT_QUES,    IT_QUOT,    IT_SECT,    IT_EURO,    IT_PIPE,    _______,    _______,    _______,    _______,    IT_ASTR,    IT_4,       IT_5,       IT_6,       IT_PLUS,    _______,
         _______,    IT_DGRV,    IT_ACUT,    IT_CIRC,    IT_AMPR,    IT_BSLS,    _______,    _______,    _______,    _______,    IT_SLSH,    IT_1,       IT_2,       IT_3,       IT_MINS,    _______,
         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
