@@ -6,24 +6,29 @@
 
 // Light LEDs 4, 5, 6, 7, 8 and 9 in cyan when keyboard number is active.
 // LED named 4 on the PCB is identified as 3 in QMK
+const rgblight_segment_t PROGMEM base_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 20, HSV_TEAL}
+);
+
 const rgblight_segment_t PROGMEM number_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 6, HSV_SPRINGGREEN}
+    {0, 20, HSV_SPRINGGREEN}
 );
 
 const rgblight_segment_t PROGMEM symbol_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 6, HSV_MAGENTA}
+    {0, 20, HSV_MAGENTA}
 );
 
 const rgblight_segment_t PROGMEM navigation_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 6, HSV_RED}
+    {0, 20, HSV_RED}
 );
 
 const rgblight_segment_t PROGMEM adjust_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {3, 6, HSV_YELLOW}
+    {0, 20, HSV_YELLOW}
 );
 
 // Now define the array of layers. Later layers take precedence
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    base_layer,
     number_layer,
     symbol_layer,
     navigation_layer,
@@ -36,10 +41,11 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(0, layer_state_cmp(state, NUMBERS_LAYER));
-    rgblight_set_layer_state(1, layer_state_cmp(state, SYMBOLS_LAYER));
-    rgblight_set_layer_state(2, layer_state_cmp(state, NAVIGATION_LAYER));
-    rgblight_set_layer_state(3, layer_state_cmp(state, ADJUST_LAYER));
+    rgblight_set_layer_state(0, layer_state_cmp(state, BASE_LAYER));
+    rgblight_set_layer_state(1, layer_state_cmp(state, NUMBERS_LAYER));
+    rgblight_set_layer_state(2, layer_state_cmp(state, SYMBOLS_LAYER));
+    rgblight_set_layer_state(3, layer_state_cmp(state, NAVIGATION_LAYER));
+    rgblight_set_layer_state(4  , layer_state_cmp(state, ADJUST_LAYER));
 
     return state;
 }
