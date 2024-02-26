@@ -21,7 +21,7 @@ RGBLIGHT_ENABLE = yes      # Enable keyboard RGB underglow
 
 # Sure, a display may help.
 OLED_ENABLE = yes
-OLED_DRIVER = SSD1306
+OLED_DRIVER = ssd1306
 
 ifeq ($(strip $(RGBLIGHT_ENABLE)), yes)
   SRC += lighting_layers.c
