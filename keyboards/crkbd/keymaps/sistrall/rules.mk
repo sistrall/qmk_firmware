@@ -20,7 +20,7 @@ RGBLIGHT_ENABLE = no
 
 # Sure, a display may help.
 OLED_ENABLE = yes
-OLED_DRIVER = SSD1306
+OLED_DRIVER = ssd1306
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
   SRC += oled.c

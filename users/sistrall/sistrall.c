@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,     IT_Q,       IT_W,       IT_F,       IT_P,       IT_B,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_J,       IT_L,       IT_U,       IT_Y,       IT_SLSH,    RA_BSPC,
         IT_AT,      LS_A,       LC_R,       LA_S,       LG_T,       IT_G,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_M,       RG_N,       RA_E,       RC_I,       RS_O,       IT_HASH,
         SC_LSPO,    LC_Z,       LA_X,       IT_C,       IT_D,       IT_V,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_K,       IT_H,       TD(TD_CQ),  RA_DOT,     RC_MINS,    SC_RSPC,
-        KC_NO,      KC_NO,      KC_NO,      LC_E,       KC_LALT,    KC_LGUI,    KC_SPACE,   MO_NUM,     MO_NAV,     KC_ENT,     KC_RGUI,    KC_RALT,    KC_RCTL,    KC_NO,      KC_NO,      KC_NO
+        KC_NO,      KC_NO,      KC_NO,      LC_E,       KC_LALT,    KC_LGUI,    KC_SPACE,   LT_NUM,     MO_NAV,     KC_ENT,     KC_RGUI,    KC_RALT,    KC_RCTL,    KC_NO,      KC_NO,      KC_NO
     ),
 
     [NUMBERS_LAYER] = SISTRALL_layout(

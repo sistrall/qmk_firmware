@@ -14,5 +14,5 @@ LAYOUT_ortho_5x12( \
     K10, K11, K12, K13, K14, K15, K1A, K1B, K1C, K1D, K1E, K1F, \
     K20, K21, K22, K23, K24, K25, K2A, K2B, K2C, K2D, K2E, K2F, \
     K30, K31, K32, K33, K34, K35, K3A, K3B, K3C, K3D, K3E, K3F, \
-    K43, K44, K45, K47, ___, K46, K49, ___, K48, K4A, K4B, K4C \
+    K43, K44, K47, K45, ___, K46, K49, ___, K4A, K48, K4B, K4C \
 )
