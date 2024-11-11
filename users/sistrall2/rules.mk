@@ -1,4 +1,4 @@
-# Enable combos: the idea is to use combos for layer switching
+# Enable combos
 COMBO_ENABLE = yes
 
 # Enable tap dance: the idea is to use it for accents and symbols
@@ -11,11 +11,4 @@ CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = no            # Enable N-Key Rollover
 
-SRC += sistrall.c
-SRC += keycodes.c
-SRC += tap_dances.c
-SRC += layers.c
-
-ifeq ($(strip $(ENCODER_ENABLE)), yes)
-  SRC += encoder.c
-endif
+SRC += sistrall2.c

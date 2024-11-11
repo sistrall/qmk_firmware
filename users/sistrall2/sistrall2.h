@@ -1,11 +1,32 @@
 #pragma once
 
+// See: https://docs.qmk.fm/feature_layouts#tips-for-making-layouts-keyboard-agnostic
 #include QMK_KEYBOARD_H
+
+// I will mostly use my keyboards with an Italian OS, so it's useful to have Italian keycodes defined.
+#include "keymap_italian_mac_iso.h"
+
+// Inventory of the layers:
+//
+// - base layer is the one containing letters
+// - numbers layer contains numbers and some symbols
+// - navigation layer contains arrow keys, media control keys and more
+enum LAYERS {
+    BASE_LAYER,
+    NUMBERS_LAYER,
+    SYMBOLS_LAYER,
+    NAVIGATION_LAYER,
+    ADJUST_LAYER,
+};
 
 // Keycodes
 
+#define PAGE_UP KC_PAGE_UP
+#define PAGE_DOWN KC_PAGE_DOWN
+
 #define VL_ENT LT(NAVIGATION_LAYER, KC_ENT)
 #define NL_SPC LT(NUMBERS_LAYER, KC_SPC)
+#define SL_SPC LT(SYMBOLS_LAYER, KC_SPC)
 
 #define MO_NUM MO(NUMBERS_LAYER)
 #define MO_NAV MO(NAVIGATION_LAYER)
@@ -17,6 +38,7 @@
 
 #define LG_ESC MT(MOD_LGUI, KC_ESC)
 #define RG_ESC MT(MOD_RGUI, KC_ESC)
+#define LG_TAB MT(MOD_LGUI, KC_TAB)
 
 #define TT_BL TT(BASE_LAYER)
 #define TT_NL TT(NUMBERS_LAYER)
@@ -55,30 +77,17 @@
 #define LA_TAB LALT_T(KC_TAB)
 #define RA_BSPC RALT_T(KC_BSPC)
 
+// Tap-dance
 
-// Inventory of the layers:
-//
-// - base layer is the one containing letters
-// - numbers layer contains numbers and some symbols
-// - navigation layer contains arrow keys, media control keys and more
-enum LAYERS {
-    BASE_LAYER,
-    NUMBERS_LAYER,
-    SYMBOLS_LAYER,
-    NAVIGATION_LAYER,
-    ADJUST_LAYER,
+enum {
+    TD_CQ,
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_CQ] = ACTION_TAP_DANCE_DOUBLE(IT_COMM, IT_QUOT),
 };
 
 // Combos
-
-#pragma once
-
-#include QMK_KEYBOARD_H
-
-#include "keymap_italian_mac_iso.h"
-
-#include "keycodes.h"
-#include "tap_dances.h"
 
 enum combos {
     LEFT_HALF_TOGGLE_TAP_NUMBERS_LAYER,
@@ -118,31 +127,13 @@ combo_t key_combos[] = {
     COMBO(right_half_rabk, IT_RABK),
 };
 
-
-// Tap dance
-
-enum {
-    TD_CQ,
-};
-
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_CQ] = ACTION_TAP_DANCE_DOUBLE(IT_COMM, IT_QUOT),
-};
-
-
-// I will mostly use my keyboards with an Italian OS, so it's useful to have Italian keycodes defined.
-#include "keymap_italian_mac_iso.h"
-
-#define PAGE_UP KC_PAGE_UP
-#define PAGE_DOWN KC_PAGE_DOWN
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE_LAYER] = SISTRALL_layout(
         KC_ESC,     IT_1,       IT_2,       IT_3,       IT_4,       IT_5,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_6,       IT_7,       IT_8,       IT_9,       IT_0,       KC_BSPC,
         KC_TAB,     IT_Q,       IT_W,       IT_F,       IT_P,       IT_B,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_J,       IT_L,       IT_U,       IT_Y,       IT_SLSH,    RA_BSPC,
         IT_AT,      LS_A,       LC_R,       LA_S,       LG_T,       IT_G,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_M,       RG_N,       RA_E,       RC_I,       RS_O,       IT_HASH,
         SC_LSPO,    LC_Z,       LA_X,       IT_C,       IT_D,       IT_V,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    IT_K,       IT_H,       TD(TD_CQ),  RA_DOT,     RC_MINS,    SC_RSPC,
-        KC_NO,      KC_NO,      KC_NO,      LC_E,       KC_LALT,    KC_LGUI,    KC_SPACE,   LT_NUM,     MO_NAV,     KC_ENT,     KC_RGUI,    KC_RALT,    KC_RCTL,    KC_NO,      KC_NO,      KC_NO
+        KC_NO,      KC_NO,      KC_NO,      LC_E,       KC_LALT,    LG_ESC,     SL_SPC,     NL_TAB,     VL_BSP,     KC_ENT,     KC_RGUI,    KC_RALT,    KC_RCTL,    KC_NO,      KC_NO,      KC_NO
     ),
 
     [NUMBERS_LAYER] = SISTRALL_layout(
@@ -155,9 +146,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [SYMBOLS_LAYER] = SISTRALL_layout(
         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    RA_BSPC,    _______,
+        _______,    IT_AT,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    IT_HASH,    _______,
+        _______,    SC_LSPO,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    SC_RSPC,    _______,
         _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______
     ),
 
